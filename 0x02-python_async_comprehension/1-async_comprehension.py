@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-Module for task 3
+Module for task 1
 """
-import asyncio
-import time
+from typing import List
 from importlib import import_module as using
 
-async_comprehension = using('1-async_comprehension').async_comprehension
+
+async_generator = using('0-async_generator').async_generator
 
 
-async def measure_runtime() -> float:
-    """
-    returns a float runtime of the async_comprehension function in seconds.
-    """
-    start_time = time.time()
-    await asyncio.gather(*(async_comprehension() for _ in range(4)))
-    return time.time() - start_time
+async def async_comprehension() -> List[float]:
+    '''Creates a list of 10 numbers from a 10-number generator.
+    '''
+    return [num async for num in async_generator()]
