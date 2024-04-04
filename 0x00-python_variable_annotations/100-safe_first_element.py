@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-module returning the first element 
+module returning the first element
     of a list, or None if the list is empty.
 """
 from typing import Sequence, Union, Any
